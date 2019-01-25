@@ -4,7 +4,7 @@ Code for processing the data collected by Wavetronix Roadway Sensors with a brie
 
 Reference code for data processing for future needed from other reasearch projects.
 
-## Scheme of raw WAVETRONIX data stored in INTRANS HDFS cluster
+## Scheme of raw WAVETRONIX data stored in INTRANS HDFS
 
 detectorID, date, startTime, endTime, status, numOfLanes, laneID_1, count, volume, occupancy, speed, smallCount, 
 smallVolume, mediumCount, mediumVolume, largeCount, largeVolume, (laneID_2, count, volume, occupancy, ......)
