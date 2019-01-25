@@ -2,7 +2,7 @@
 
 Code for processing the data collected by Wavetronix Roadway Sensors with a brief data quality indicator.
 
-Reference code for data processing for future needed from other reasearch projects.
+Reference data processing code for future needed from other reasearch projects.
 
 ## Scheme of raw WAVETRONIX data stored in INTRANS HDFS
 
