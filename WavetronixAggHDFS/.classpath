@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/commons-configuration-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-annotations-2.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-annotations-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-auth-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-client-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-common-2.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-common-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-core-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-core-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-hdfs-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-mapreduce-client-core-2.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-mapreduce-client-core-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/hadoop-mapreduce-client-jobclient-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/jsch-0.1.53.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/pig-0.8.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/pig-0.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tongge/Desktop/Tongge/JAVA_lib/weka.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
