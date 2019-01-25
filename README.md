@@ -28,4 +28,4 @@ detectorID, date, hour, 5minID, numberOfLanes, weightedOccupancy, weightedSpeed,
 Example:
 9th Ave to I-29 SB, 20180302, 14, 6, 1, 3.423076923, 44.96342688, 26, 0
 
-sensor '9th Ave to I-29 SB', 03/02/2018, 14:30:00, weighted_speed = 44.96 mph, weighted_occupancy = 3.42, volume = 26, indicator = 0 (the record is acceptable).
+sensor '9th Ave to I-29 SB', 03/02/2018, 14:30:00, 1 lane covered by this sensor, weighted_speed = 44.96 mph, weighted_occupancy = 3.42, volume = 26, indicator = 0 (the record is acceptable).
