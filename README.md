@@ -16,7 +16,7 @@ Example:
 I-74 NB from North Tower to Isle, 20150829, 232740, 232800, operational, 2, 1,null,null,0,0,null,null,
 null,null,null,null,2,2,2,6,51,2,2,null,null,null,null
 
-## Scheme of processed 5-mins data
+## Scheme of aggregated 5-mins data
 
 detectorID, date, hour, 5minID, numberOfLanes, weightedOccupancy, weightedSpeed, sumVolume, qualityIndicator
 
@@ -25,3 +25,7 @@ detectorID, date, hour, 5minID, numberOfLanes, weightedOccupancy, weightedSpeed,
 - qualityIndicator = 1, duplicated records > 20%
 - qualityIndicator = 2, missing records > 20%
 
+Example:
+9th Ave to I-29 SB, 20180302, 14, 6, 1, 3.423076923, 44.96342688, 26, 0
+
+sensor '9th Ave to I-29 SB', 03/02/2018, 14:30:00, weighted_speed = 44.96 mph, weighted_occupancy = 3.42, volume = 26, indicator = 0 (the record is acceptable).
