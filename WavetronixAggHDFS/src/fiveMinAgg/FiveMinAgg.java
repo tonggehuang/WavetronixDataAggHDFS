@@ -52,7 +52,7 @@ public class FiveMinAgg extends Configured implements Tool {
 			conf1.set("mapred.textoutputformat.separator", ",");	
 			
 			// Create the job
-			Job job_one = new Job(conf1, "wavetronix_fivemin"); 
+			Job job_one = new Job(conf1, "wavetronix_5min"); 
 			
 			// Attach the job to this Driver
 			job_one.setJarByClass(FiveMinAgg.class);
