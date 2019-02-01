@@ -29,3 +29,14 @@ Example:
 9th Ave to I-29 SB, 20180302, 14, 6, 1, 3.423076923, 44.96342688, 26, 0
 
 sensor '9th Ave to I-29 SB', 03/02/2018, 14:30:00, 1 lane covered by this sensor, weighted_speed = 44.96 mph, weighted_occupancy = 3.42, volume = 26 vehicles, indicator = 0 (the record is acceptable).
+
+## Scheme of aggregated 5-mins Lane separated data
+
+detectorID, date, hour, 5minID, numberOfLanes, excelTimestamp, volumeLane1, weightedOccupancyLane1, weightedSpeedLane1(mph), volumeLane2, weightedOccupancyLane2, weightedSpeedLane2(mph), ......, volumeLaneN, weightedOccupancyLaneN, weightedSpeedLaneN(mph), qualityIndicator, detectorName
+
+- qualityIndicator = 0, accceptable records
+- qualityIndicator = 1, duplicated records > 20%
+- qualityIndicator = 2, missing records > 20%
+
+Example:
+I-35 NB @ NE 36th St, 20180601, 16, 10, 2, 6/1/2018 4:50 PM, 48, 3.54, 73.03, 53, 4.02, 77.6, 0, I-35 NB @ NE 36th St
