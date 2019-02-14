@@ -18,7 +18,7 @@ null,null,null,null,2,2,2,6,51,2,2,null,null,null,null
 
 ## Scheme of aggregated 5-mins data
 
-detectorID, date, hour, 5minID, numberOfLanes, weightedOccupancy, weightedSpeed, sumVolume, qualityIndicator
+detectorID, date, hour, 5minID, numberOfLanes, avgOccupancy, weightedSpeed, sumVolume, qualityIndicator
 
 - Records with volume > 3600 veh/h/ln are thrown out
 - qualityIndicator = 0, accceptable records
@@ -32,7 +32,7 @@ sensor '9th Ave to I-29 SB', 03/02/2018, 14:30:00, 1 lane covered by this sensor
 
 ## Scheme of aggregated 5-mins Lane separated data
 
-detectorID, date, hour, 5minID, numberOfLanes, excelTimestamp, volumeLane1, weightedOccupancyLane1, weightedSpeedLane1(mph), volumeLane2, weightedOccupancyLane2, weightedSpeedLane2(mph), ......, volumeLaneN, weightedOccupancyLaneN, weightedSpeedLaneN(mph), qualityIndicator, detectorName
+detectorID, date, hour, 5minID, numberOfLanes, excelTimestamp, volumeLane1, avgOccupancyLane1, weightedSpeedLane1(mph), volumeLane2, weightedOccupancyLane2, weightedSpeedLane2(mph), ......, volumeLaneN, weightedOccupancyLaneN, weightedSpeedLaneN(mph), qualityIndicator, detectorName
 
 - qualityIndicator = 0, accceptable records
 - qualityIndicator = 1, duplicated records > 20%
