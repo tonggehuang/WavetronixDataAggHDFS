@@ -34,7 +34,7 @@ public class FiveMinAgg extends Configured implements Tool {
 		
 		int startDate = 201803;
 		
-		int endDate = 201812;
+		int endDate = 201803;
 		
 		for(int i=startDate;i<=endDate;i++) 
         
@@ -123,7 +123,7 @@ public class FiveMinAgg extends Configured implements Tool {
 				
 				int sumStationVolume=0;
 				
-				// weighted speed and occupancy for station
+				// weighted speed and average occ for station
 				
 				double sumStationSpeed=0.0;
 				double sumStationOcc=0.0;
@@ -164,18 +164,21 @@ public class FiveMinAgg extends Configured implements Tool {
 						laneVehCountInt = 0;
 					}
 					*/
-
+					
 					sumStationVolume = sumStationVolume + laneVehCountInt;
 					sumStationSpeed = sumStationSpeed + laneSpeedDouble * laneVehCountInt;
-					sumStationOcc = sumStationOcc + laneOccDouble * laneVehCountInt;
+					sumStationOcc = sumStationOcc + laneOccDouble; 
 					
 				}
+				
+				double AvgStationOcc = 0.0;
+				AvgStationOcc = sumStationOcc/stationLanes;
 				
 				// Map writer
 				if (Integer.parseInt(date)>=20151001)
 				{
 					context.write(new Text(name+","+date+","+hour+","+minsFive),
-							new Text (Integer.toString(stationLanes)+","+Double.toString(sumStationSpeed)+","+Double.toString(sumStationOcc)+","+Integer.toString(sumStationVolume)));	//station
+							new Text (Integer.toString(stationLanes)+","+Double.toString(sumStationSpeed)+","+Double.toString(AvgStationOcc)+","+Integer.toString(sumStationVolume)));	//station
 				}
 				
 			} // end if
@@ -235,21 +238,21 @@ public class FiveMinAgg extends Configured implements Tool {
 			
 			
 			
-			// get weighted speed and occ for 5 min
+			// get weighted speed and average occ for 5 min
 			
 			double weightedSpeed=0.0;
-			double weightedOcc=0.0;
+			double averagedOcc=0.0;
 		
 			if (aggVolume==0) 
 			{
 				weightedSpeed=weightedSpeed+0.0; // no vehicle present
-				weightedOcc=weightedOcc+0.0; // no vehicle present
+				averagedOcc=averagedOcc+0.0; // no vehicle present
 			}
 			
 			else 
 			{
 				weightedSpeed = (aggSpeed/aggVolume)/1.609; // mph convertor for weighted speed
-				weightedOcc = aggOcc/aggVolume; // weighted occ
+				averagedOcc = aggOcc/i; // average occ
 			}
 			
 			// data completeness indicator for 5 mins records (20%)
@@ -264,7 +267,7 @@ public class FiveMinAgg extends Configured implements Tool {
 			}
 			
 			context.write(new Text(skey), 
-					new Text(numlanes+","+Double.toString(weightedOcc)+","+Double.toString(weightedSpeed)+","+Integer.toString(aggVolume)+","+Integer.toString(completenessIndicator)));
+					new Text(numlanes+","+Double.toString(averagedOcc)+","+Double.toString(weightedSpeed)+","+Integer.toString(aggVolume)+","+Integer.toString(completenessIndicator)));
 			
 			} // end reduce
 		

@@ -33,7 +33,7 @@ public class FiveMinAggLanes extends Configured implements Tool {
 		
 		int startDate = 201803;
 		
-		int endDate = 201811;
+		int endDate = 201803;
 		
 		for(int i=startDate;i<=endDate;i++) 
         
@@ -393,7 +393,7 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					
 					aggVolume1 = aggVolume1 + (int)Double.parseDouble(node[0*3+0]);
 					aggSpeed1 = aggSpeed1 + Double.parseDouble(node[0*3+2]) * (int)Double.parseDouble(node[0*3+0]);
-					aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]) * (int)Double.parseDouble(node[0*3+0]);
+					aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]);
 					
 					i=i+1;
 					
@@ -408,7 +408,7 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					weightedOcc1=weightedOcc1+0.0; // no vehicle present lane1
 				} else {
 					weightedSpeed1 = (aggSpeed1/aggVolume1)/1.609; // mph convertor for weighted speed
-					weightedOcc1 = aggOcc1/aggVolume1; // weighted occ
+					weightedOcc1 = aggOcc1/i; // weighted occ
 				}
 				
 				// data completeness indicator for 5 mins records (20%)
@@ -447,11 +447,11 @@ public class FiveMinAggLanes extends Configured implements Tool {
 	
 					aggVolume1 = aggVolume1 + (int) Double.parseDouble(node[0 * 3 + 0]);
 					aggSpeed1 = aggSpeed1 + Double.parseDouble(node[0 * 3 + 2]) * (int) Double.parseDouble(node[0 * 3 + 0]);
-					aggOcc1 = aggOcc1 + Double.parseDouble(node[0 * 3 + 1]) * (int) Double.parseDouble(node[0 * 3 + 0]);
+					aggOcc1 = aggOcc1 + Double.parseDouble(node[0 * 3 + 1]);
 	
 					aggVolume2 = aggVolume2 + (int) Double.parseDouble(node[1 * 3 + 0]);
 					aggSpeed2 = aggSpeed2 + Double.parseDouble(node[1 * 3 + 2]) * (int) Double.parseDouble(node[1 * 3 + 0]);
-					aggOcc2 = aggOcc2 + Double.parseDouble(node[1 * 3 + 1]) * (int) Double.parseDouble(node[1 * 3 + 0]);
+					aggOcc2 = aggOcc2 + Double.parseDouble(node[1 * 3 + 1]);
 	
 					i = i + 1;
 	
@@ -472,9 +472,9 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					weightedOcc2 = weightedOcc2 + 0.0; // no vehicle present lane2
 				} else {
 					weightedSpeed1 = (aggSpeed1 / aggVolume1) / 1.609; // mph convertor for weighted speed
-					weightedOcc1 = aggOcc1 / aggVolume1; // weighted occ
+					weightedOcc1 = aggOcc1 / i; // weighted occ
 					weightedSpeed2 = (aggSpeed2 / aggVolume2) / 1.609; // mph convertor for weighted speed
-					weightedOcc2 = aggOcc2 / aggVolume2; // weighted occ
+					weightedOcc2 = aggOcc2 / i; // weighted occ
 				}
 	
 				// data completeness indicator for 5 mins records (20%)
@@ -519,15 +519,15 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					
 					aggVolume1 = aggVolume1 + (int)Double.parseDouble(node[0*3+0]);
 					aggSpeed1 = aggSpeed1 + Double.parseDouble(node[0*3+2]) * (int)Double.parseDouble(node[0*3+0]);
-					aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]) * (int)Double.parseDouble(node[0*3+0]);
+					aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]);
 					
 					aggVolume2 = aggVolume2 + (int)Double.parseDouble(node[1*3+0]);
 					aggSpeed2 = aggSpeed2 + Double.parseDouble(node[1*3+2]) * (int)Double.parseDouble(node[1*3+0]);
-					aggOcc2 = aggOcc2 + Double.parseDouble(node[1*3+1]) * (int)Double.parseDouble(node[1*3+0]);
+					aggOcc2 = aggOcc2 + Double.parseDouble(node[1*3+1]);
 					
 					aggVolume3 = aggVolume3 + (int)Double.parseDouble(node[2*3+0]);
 					aggSpeed3 = aggSpeed3 + Double.parseDouble(node[2*3+2]) * (int)Double.parseDouble(node[2*3+0]);
-					aggOcc3 = aggOcc3 + Double.parseDouble(node[2*3+1]) * (int)Double.parseDouble(node[2*3+0]);
+					aggOcc3 = aggOcc3 + Double.parseDouble(node[2*3+1]);
 					
 					i=i+1;
 				
@@ -553,11 +553,11 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					weightedOcc3=weightedOcc3+0.0; // no vehicle present lane2
 				} else {
 					weightedSpeed1 = (aggSpeed1/aggVolume1)/1.609; // mph convertor for weighted speed
-					weightedOcc1 = aggOcc1/aggVolume1; // weighted occ
+					weightedOcc1 = aggOcc1/i; // weighted occ
 					weightedSpeed2 = (aggSpeed2/aggVolume2)/1.609; // mph convertor for weighted speed
-					weightedOcc2 = aggOcc2/aggVolume2; // weighted occ
+					weightedOcc2 = aggOcc2/i; // weighted occ
 					weightedSpeed3 = (aggSpeed3/aggVolume3)/1.609; // mph convertor for weighted speed
-					weightedOcc3 = aggOcc3/aggVolume3; // weighted occ
+					weightedOcc3 = aggOcc3/i; // weighted occ
 				}
 				
 				// data completeness indicator for 5 mins records (20%)
@@ -605,19 +605,19 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					
 					aggVolume1 = aggVolume1 + (int)Double.parseDouble(node[0*3+0]);
 					aggSpeed1 = aggSpeed1 + Double.parseDouble(node[0*3+2]) * (int)Double.parseDouble(node[0*3+0]);
-					aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]) * (int)Double.parseDouble(node[0*3+0]);
+					aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]);
 					
 					aggVolume2 = aggVolume2 + (int)Double.parseDouble(node[1*3+0]);
 					aggSpeed2 = aggSpeed2 + Double.parseDouble(node[1*3+2]) * (int)Double.parseDouble(node[1*3+0]);
-					aggOcc2 = aggOcc2 + Double.parseDouble(node[1*3+1]) * (int)Double.parseDouble(node[1*3+0]);
+					aggOcc2 = aggOcc2 + Double.parseDouble(node[1*3+1]);
 					
 					aggVolume3 = aggVolume3 + (int)Double.parseDouble(node[2*3+0]);
 					aggSpeed3 = aggSpeed3 + Double.parseDouble(node[2*3+2]) * (int)Double.parseDouble(node[2*3+0]);
-					aggOcc3 = aggOcc3 + Double.parseDouble(node[2*3+1]) * (int)Double.parseDouble(node[2*3+0]);
+					aggOcc3 = aggOcc3 + Double.parseDouble(node[2*3+1]);
 					
 					aggVolume4 = aggVolume4 + (int)Double.parseDouble(node[3*3+0]);
 					aggSpeed4 = aggSpeed4 + Double.parseDouble(node[3*3+2]) * (int)Double.parseDouble(node[3*3+0]);
-					aggOcc4 = aggOcc4 + Double.parseDouble(node[3*3+1]) * (int)Double.parseDouble(node[3*3+0]);
+					aggOcc4 = aggOcc4 + Double.parseDouble(node[3*3+1]);
 					
 					i=i+1;
 				
@@ -648,13 +648,13 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					weightedOcc4=weightedOcc4+0.0; // no vehicle present lane2
 				} else {
 					weightedSpeed1 = (aggSpeed1/aggVolume1)/1.609; // mph convertor for weighted speed
-					weightedOcc1 = aggOcc1/aggVolume1; // weighted occ
+					weightedOcc1 = aggOcc1/i; // weighted occ
 					weightedSpeed2 = (aggSpeed2/aggVolume2)/1.609; // mph convertor for weighted speed
-					weightedOcc2 = aggOcc2/aggVolume2; // weighted occ
+					weightedOcc2 = aggOcc2/i; // weighted occ
 					weightedSpeed3 = (aggSpeed3/aggVolume3)/1.609; // mph convertor for weighted speed
-					weightedOcc3 = aggOcc3/aggVolume3; // weighted occ
+					weightedOcc3 = aggOcc3/i; // weighted occ
 					weightedSpeed4 = (aggSpeed4/aggVolume4)/1.609; // mph convertor for weighted speed
-					weightedOcc4 = aggOcc4/aggVolume4; // weighted occ
+					weightedOcc4 = aggOcc4/i; // weighted occ
 				}
 				
 				// data completeness indicator for 5 mins records (20%)
@@ -707,29 +707,28 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					String node[] = line.split(",");
 
 					aggVolume1 = aggVolume1 + (int) Double.parseDouble(node[0 * 3 + 0]);
-					aggSpeed1 = aggSpeed1
-							+ Double.parseDouble(node[0 * 3 + 2]) * (int) Double.parseDouble(node[0 * 3 + 0]);
-					aggOcc1 = aggOcc1 + Double.parseDouble(node[0 * 3 + 1]) * (int) Double.parseDouble(node[0 * 3 + 0]);
+					aggSpeed1 = aggSpeed1 + Double.parseDouble(node[0 * 3 + 2]) * (int) Double.parseDouble(node[0 * 3 + 0]);
+					aggOcc1 = aggOcc1 + Double.parseDouble(node[0 * 3 + 1]);
 
 					aggVolume2 = aggVolume2 + (int) Double.parseDouble(node[1 * 3 + 0]);
 					aggSpeed2 = aggSpeed2
 							+ Double.parseDouble(node[1 * 3 + 2]) * (int) Double.parseDouble(node[1 * 3 + 0]);
-					aggOcc2 = aggOcc2 + Double.parseDouble(node[1 * 3 + 1]) * (int) Double.parseDouble(node[1 * 3 + 0]);
+					aggOcc2 = aggOcc2 + Double.parseDouble(node[1 * 3 + 1]);
 
 					aggVolume3 = aggVolume3 + (int) Double.parseDouble(node[2 * 3 + 0]);
 					aggSpeed3 = aggSpeed3
 							+ Double.parseDouble(node[2 * 3 + 2]) * (int) Double.parseDouble(node[2 * 3 + 0]);
-					aggOcc3 = aggOcc3 + Double.parseDouble(node[2 * 3 + 1]) * (int) Double.parseDouble(node[2 * 3 + 0]);
+					aggOcc3 = aggOcc3 + Double.parseDouble(node[2 * 3 + 1]);
 
 					aggVolume4 = aggVolume4 + (int) Double.parseDouble(node[3 * 3 + 0]);
 					aggSpeed4 = aggSpeed4
 							+ Double.parseDouble(node[3 * 3 + 2]) * (int) Double.parseDouble(node[3 * 3 + 0]);
-					aggOcc4 = aggOcc4 + Double.parseDouble(node[3 * 3 + 1]) * (int) Double.parseDouble(node[3 * 3 + 0]);
+					aggOcc4 = aggOcc4 + Double.parseDouble(node[3 * 3 + 1]);
 
 					aggVolume5 = aggVolume5 + (int) Double.parseDouble(node[4 * 3 + 0]);
 					aggSpeed5 = aggSpeed5
 							+ Double.parseDouble(node[4 * 3 + 2]) * (int) Double.parseDouble(node[4 * 3 + 0]);
-					aggOcc5 = aggOcc5 + Double.parseDouble(node[4 * 3 + 1]) * (int) Double.parseDouble(node[4 * 3 + 0]);
+					aggOcc5 = aggOcc5 + Double.parseDouble(node[4 * 3 + 1]);
 
 					i = i + 1;
 
@@ -764,15 +763,15 @@ public class FiveMinAggLanes extends Configured implements Tool {
 					weightedOcc5 = weightedOcc5 + 0.0; // no vehicle present lane2
 				} else {
 					weightedSpeed1 = (aggSpeed1 / aggVolume1) / 1.609; // mph convertor for weighted speed
-					weightedOcc1 = aggOcc1 / aggVolume1; // weighted occ
+					weightedOcc1 = aggOcc1 / i; // weighted occ
 					weightedSpeed2 = (aggSpeed2 / aggVolume2) / 1.609; // mph convertor for weighted speed
-					weightedOcc2 = aggOcc2 / aggVolume2; // weighted occ
+					weightedOcc2 = aggOcc2 / i; // weighted occ
 					weightedSpeed3 = (aggSpeed3 / aggVolume3) / 1.609; // mph convertor for weighted speed
-					weightedOcc3 = aggOcc3 / aggVolume3; // weighted occ
+					weightedOcc3 = aggOcc3 / i; // weighted occ
 					weightedSpeed4 = (aggSpeed4 / aggVolume4) / 1.609; // mph convertor for weighted speed
-					weightedOcc4 = aggOcc4 / aggVolume4; // weighted occ
+					weightedOcc4 = aggOcc4 / i; // weighted occ
 					weightedSpeed5 = (aggSpeed5 / aggVolume5) / 1.609; // mph convertor for weighted speed
-					weightedOcc5 = aggOcc5 / aggVolume5; // weighted occ
+					weightedOcc5 = aggOcc5 / i; // weighted occ
 				}
 
 				// data completeness indicator for 5 mins records (20%)
@@ -832,27 +831,27 @@ public class FiveMinAggLanes extends Configured implements Tool {
 						
 						aggVolume1 = aggVolume1 + (int)Double.parseDouble(node[0*3+0]);
 						aggSpeed1 = aggSpeed1 + Double.parseDouble(node[0*3+2]) * (int)Double.parseDouble(node[0*3+0]);
-						aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]) * (int)Double.parseDouble(node[0*3+0]);
+						aggOcc1 = aggOcc1 + Double.parseDouble(node[0*3+1]);
 						
 						aggVolume2 = aggVolume2 + (int)Double.parseDouble(node[1*3+0]);
 						aggSpeed2 = aggSpeed2 + Double.parseDouble(node[1*3+2]) * (int)Double.parseDouble(node[1*3+0]);
-						aggOcc2 = aggOcc2 + Double.parseDouble(node[1*3+1]) * (int)Double.parseDouble(node[1*3+0]);
+						aggOcc2 = aggOcc2 + Double.parseDouble(node[1*3+1]);
 						
 						aggVolume3 = aggVolume3 + (int)Double.parseDouble(node[2*3+0]);
 						aggSpeed3 = aggSpeed3 + Double.parseDouble(node[2*3+2]) * (int)Double.parseDouble(node[2*3+0]);
-						aggOcc3 = aggOcc3 + Double.parseDouble(node[2*3+1]) * (int)Double.parseDouble(node[2*3+0]);
+						aggOcc3 = aggOcc3 + Double.parseDouble(node[2*3+1]);
 						
 						aggVolume4 = aggVolume4 + (int)Double.parseDouble(node[3*3+0]);
 						aggSpeed4 = aggSpeed4 + Double.parseDouble(node[3*3+2]) * (int)Double.parseDouble(node[3*3+0]);
-						aggOcc4 = aggOcc4 + Double.parseDouble(node[3*3+1]) * (int)Double.parseDouble(node[3*3+0]);
+						aggOcc4 = aggOcc4 + Double.parseDouble(node[3*3+1]);
 						
 						aggVolume5 = aggVolume5 + (int)Double.parseDouble(node[4*3+0]);
 						aggSpeed5 = aggSpeed5 + Double.parseDouble(node[4*3+2]) * (int)Double.parseDouble(node[4*3+0]);
-						aggOcc5 = aggOcc5 + Double.parseDouble(node[4*3+1]) * (int)Double.parseDouble(node[4*3+0]);
+						aggOcc5 = aggOcc5 + Double.parseDouble(node[4*3+1]);
 						
 						aggVolume6 = aggVolume6 + (int)Double.parseDouble(node[5*3+0]);
 						aggSpeed6 = aggSpeed6 + Double.parseDouble(node[5*3+2]) * (int)Double.parseDouble(node[5*3+0]);
-						aggOcc6 = aggOcc6 + Double.parseDouble(node[5*3+1]) * (int)Double.parseDouble(node[5*3+0]);
+						aggOcc6 = aggOcc6 + Double.parseDouble(node[5*3+1]);
 						
 						i=i+1;
 						
@@ -892,17 +891,17 @@ public class FiveMinAggLanes extends Configured implements Tool {
 						weightedOcc6=weightedOcc6+0.0; // no vehicle present lane2
 					} else {
 						weightedSpeed1 = (aggSpeed1/aggVolume1)/1.609; // mph convertor for weighted speed
-						weightedOcc1 = aggOcc1/aggVolume1; // weighted occ
+						weightedOcc1 = aggOcc1/i; // weighted occ
 						weightedSpeed2 = (aggSpeed2/aggVolume2)/1.609; // mph convertor for weighted speed
-						weightedOcc2 = aggOcc2/aggVolume2; // weighted occ
+						weightedOcc2 = aggOcc2/i; // weighted occ
 						weightedSpeed3 = (aggSpeed3/aggVolume3)/1.609; // mph convertor for weighted speed
-						weightedOcc3 = aggOcc3/aggVolume3; // weighted occ
+						weightedOcc3 = aggOcc3/i; // weighted occ
 						weightedSpeed4 = (aggSpeed4/aggVolume4)/1.609; // mph convertor for weighted speed
-						weightedOcc4 = aggOcc4/aggVolume4; // weighted occ
+						weightedOcc4 = aggOcc4/i; // weighted occ
 						weightedSpeed5 = (aggSpeed5/aggVolume5)/1.609; // mph convertor for weighted speed
-						weightedOcc5 = aggOcc5/aggVolume5; // weighted occ
+						weightedOcc5 = aggOcc5/i; // weighted occ
 						weightedSpeed6 = (aggSpeed6/aggVolume6)/1.609; // mph convertor for weighted speed
-						weightedOcc6 = aggOcc6/aggVolume6; // weighted occ
+						weightedOcc6 = aggOcc6/i; // weighted occ
 					}
 					
 					// data completeness indicator for 5 mins records (20%)
